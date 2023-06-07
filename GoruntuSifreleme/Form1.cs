@@ -65,18 +65,18 @@ namespace GoruntuSifreleme
                 {
                    Color orijinalPiksel = orijinalGoruntu.GetPixel(x, y);
 
-                    Point newPosition;
+                    Point yeniPozisyon;
 
                     do
                     {
-                        int newX = random.Next(genislik);
-                        int newY = random.Next(yukseklik);
+                        int yeniX = random.Next(genislik);
+                        int yeniY = random.Next(yukseklik);
 
-                        newPosition = new Point(newX, newY);
-                    } while (row.Contains(newPosition));
+                        yeniPozisyon = new Point(yeniX, yeniY);
+                    } while (row.Contains(yeniPozisyon));
 
-                    row.Add(newPosition);
-                    sonucGoruntu.SetPixel(newPosition.X, newPosition.Y, orijinalPiksel);
+                    row.Add(yeniPozisyon);
+                    sonucGoruntu.SetPixel(yeniPozisyon.X, yeniPozisyon.Y, orijinalPiksel);
                 }
 
                 rows.Add(row);
