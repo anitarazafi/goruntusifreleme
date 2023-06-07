@@ -98,15 +98,11 @@ namespace GoruntuSifreleme
             {
                 for (int x = 0; x < genislik; x++)
                 {
-                   Color sifreliPiksel = sifreliGoruntu.GetPixel(x, y);
+                   Point sifreliPoint = rows[y][x];
 
-                    int r = (sifreliPiksel.R - x + 256) % 256;
-                    int g = (sifreliPiksel.G - y + 256) % 256;
-                    int b = (sifreliPiksel.B - x - y + 256) % 256;
+                    Color sifreliPiksel = sifreliGoruntu.GetPixel(sifreliPoint.X, sifreliPoint.Y);
 
-                    Color orijinalPiksel = Color.FromArgb(r, g, b);
-
-                    orijinalGoruntu.SetPixel(x, y, orijinalPiksel); 
+                    orijinalGoruntu.SetPixel(x, y, sifreliPiksel);
                 }
             }
 
